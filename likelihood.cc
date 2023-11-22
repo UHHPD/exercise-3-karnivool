@@ -39,13 +39,16 @@ int main() {
     double result_likelihood = 1;
     double result_normalization = 1;
     for (int k : daten){
-        result_likelihood *= poisson(k, 3.11538);
+        result_likelihood *= poisson(3.11538, k);
         result_normalization *= poisson(k, k);
     }
 
     double lambda = result_likelihood / result_normalization;
-    double z = (-2 * log(lambda) - lengthOfDatensumme + 1)/(sqrt(2*(lengthOfDatensumme - 1)));
+    double z = (-2 * log(lambda) - (lengthOfDatensumme - 1))/(sqrt(2*(lengthOfDatensumme - 1)));
 
+    cout << "result_normalization: " << result_normalization << endl;
+    cout << "result_likelihood: " << result_likelihood << endl; //hier Fehler->Ergebnis ist null
+    cout << "Lambda: " << lambda << endl;
     cout << "log Lambda: " << -2 * log(lambda) << endl;
 
     f_daten.close();
