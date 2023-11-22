@@ -46,9 +46,6 @@ int main() {
     double lambda = result_likelihood / result_normalization;
     double z = (-2 * log(lambda) - (lengthOfDatensumme - 1))/(sqrt(2*(lengthOfDatensumme - 1)));
 
-    //cout << "result_normalization: " << result_normalization << endl;
-    //cout << "result_likelihood: " << result_likelihood << endl; 
-    //cout << "Lambda: " << lambda << endl;
     cout << "log Lambda: " << -2 * log(lambda) << endl;
 
     f_daten.close();
