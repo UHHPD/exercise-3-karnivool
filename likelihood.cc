@@ -19,15 +19,11 @@ int main() {
 
     int n_i;
     int lengthOfDatensumme = 0;
-    while (true) {
-        f_daten >> n_i;
-        if (f_daten.eof()) {
-            break;
-        }
+    while (f_daten >> n_i) {
         daten.push_back(n_i);
         lengthOfDatensumme++;
-
     }
+
     cout << "Likelihood_poisson von daten: " << likelihood_poisson(daten, 3.11538) << endl;
     
     for (double mu = 0; mu <= 6; mu += 0.1){
